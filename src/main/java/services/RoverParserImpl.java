@@ -15,7 +15,7 @@ public class RoverParserImpl implements Parser {
     public DataParser parseFile(String path) {
         DataParser dataParser = new DataParser();
 
-        try(BufferedReader br = new BufferedReader(new FileReader("/home/yassine/Téléchargements/input.text"))) {
+        try(BufferedReader br = new BufferedReader(new FileReader(path))) {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
 
