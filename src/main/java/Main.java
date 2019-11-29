@@ -4,6 +4,9 @@ import services.ExplorerRoverImpl;
 import services.Parser;
 import services.ParserRoverImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Main {
 
@@ -20,8 +23,13 @@ public class Main {
 
 
         // Use the date to change the rover's position
+        List<Rover> listRover;
         Explorer explorer = new ExplorerRoverImpl();
-        explorer.exploreThePlateau(inputData,plateau);
+        listRover = explorer.exploreThePlateau(inputData,plateau);
+
+        for (Rover rover: listRover ) {
+            System.out.println(rover.reportPosition());
+        }
 
 
 

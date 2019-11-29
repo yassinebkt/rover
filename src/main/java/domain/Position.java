@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Objects;
+
 public class Position {
 
     public int x;
@@ -15,8 +17,14 @@ public class Position {
         this.y = other.y;
     }
 
-    public boolean isEqual(Position other) {
-        return x == other.x && y == other.y;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Position position = (Position) o;
+        return Objects.equals(x, position.x) &&
+                Objects.equals(y, position.y);
     }
 
     @Override
@@ -36,10 +44,10 @@ public class Position {
         return true;
     }
 
-    public Position moveForward(Compass heading) {
+    public Position moveForward(Compass compass) {
         Position newPosition = null;
 
-        switch (heading) {
+        switch (compass) {
             case EAST: newPosition = new Position(x + 1, y); break;
             case NORTH: newPosition = new Position(x, y + 1); break;
             case SOUTH: newPosition = new Position(x, y - 1); break;

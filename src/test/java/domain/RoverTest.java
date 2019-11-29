@@ -2,12 +2,16 @@ package domain;
 
 import org.junit.Test;
 
+import javax.print.attribute.standard.PDLOverrideSupported;
+
 import static org.junit.Assert.*;
 
 public class RoverTest {
 
     @Test
     public void hasPosition() {
+        Rover rover = new Rover();
+        assertFalse(rover.hasPosition(new Position(3,4)));
     }
 
     @Test

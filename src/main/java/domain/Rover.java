@@ -1,6 +1,6 @@
 package domain;
 
-
+import java.util.Objects;
 
 public class Rover {
 
@@ -11,8 +11,49 @@ public class Rover {
     public Rover() {
     }
 
+    public Plateau getPlateau() {
+        return plateau;
+    }
+
+    public void setPlateau(Plateau plateau) {
+        this.plateau = plateau;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public Compass getCompass() {
+        return compass;
+    }
+
+    public void setCompass(Compass compass) {
+        this.compass = compass;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rover rover = (Rover) o;
+        return Objects.equals(position, rover.position) &&
+                compass == rover.compass;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(position, compass);
+    }
+
     public boolean hasPosition(Position pos) {
-        return position.isEqual(pos);
+        if(position != null)
+            return position.equals(pos);
+        else
+            return false;
     }
 
     public String reportPosition() {
