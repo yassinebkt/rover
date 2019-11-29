@@ -1,8 +1,9 @@
 package services;
 
-import domaine.DataParser;
+import domain.InputData;
+import domain.Plateau;
 
 public interface Parser {
 
-    DataParser parseFile(String path);
+    InputData parseFile(String path);
 }

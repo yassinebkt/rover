@@ -1,9 +1,8 @@
-package domaine;
+package domain;
 
 import java.util.List;
 
-public class DataParser {
-
+public class InputData {
     int xTopRight;
     int yTopRight;
     List<Coordinates> coordinates;

@@ -1,8 +1,9 @@
 package services;
 
-import domaine.DataParser;
+import domain.InputData;
+import domain.Plateau;
 
 public interface Explorer {
 
-    void exploreThePlateau(DataParser inputData );
+    void exploreThePlateau(InputData inputData, Plateau plateau ) throws Exception;
 }

@@ -8,7 +8,5 @@ public class ExplorerRoverImplTest {
 
     @Test
     public void exploreThePlateau() {
-        Explorer explorer = new ExplorerRoverImpl();
-       // explorer.exploreThePlateau(inputData);
     }
 }
