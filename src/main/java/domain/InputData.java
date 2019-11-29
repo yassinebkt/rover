@@ -31,4 +31,6 @@ public class InputData {
     public void setCoordinates(List<Coordinates> coordinates) {
         this.coordinates = coordinates;
     }
+
+
 }
